@@ -1,0 +1,34 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Mixed Platforms" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5s.8.0" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FieldEngineerLite.Client/FieldEngineerLite.iOS/AppDelegate.cs">
+    <Files>
+      <File FileName="FieldEngineerLite.Client/FieldEngineerLite/Services/JobService.cs" Line="20" Column="20" />
+      <File FileName="FieldEngineerLite.Client/FieldEngineerLite.iOS/AppDelegate.cs" Line="22" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="FieldEngineerLite" expanded="True">
+            <Node name="Helpers" expanded="True" />
+            <Node name="Models" expanded="True" />
+            <Node name="Services" expanded="True" />
+            <Node name="Views" expanded="True" />
+          </Node>
+          <Node name="FieldEngineerLite.iOS" expanded="True">
+            <Node name="AppDelegate.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Volumes/C/code/FieldEngineerLite/FieldEngineerLite.Client/FieldEngineerLite.Android/MainActivity.cs" line="22" column="1" />
+      <Breakpoint file="/Volumes/C/code/FieldEngineerLite/FieldEngineerLite.Client/FieldEngineerLite.Android/MainActivity.cs" line="25" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
