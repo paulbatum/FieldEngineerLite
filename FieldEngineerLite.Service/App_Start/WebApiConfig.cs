@@ -13,9 +13,9 @@ namespace FieldEngineerLite.Service
             // Use this class to set configuration options for your mobile service
             ConfigOptions options = new ConfigOptions();
 
-            // Enable server side login flow for AAD
-            options.LoginProviders.Remove(typeof(AzureActiveDirectoryLoginProvider));
-            options.LoginProviders.Add(typeof(AzureActiveDirectoryExtendedLoginProvider));
+            // Uncomment to Enable server side login flow for AAD
+            //options.LoginProviders.Remove(typeof(AzureActiveDirectoryLoginProvider));
+            //options.LoginProviders.Add(typeof(AzureActiveDirectoryExtendedLoginProvider));
 
             // Use this class to set WebAPI configuration options
             HttpConfiguration config = ServiceConfig.Initialize(new ConfigBuilder(options));
@@ -26,7 +26,7 @@ namespace FieldEngineerLite.Service
 
             Mapper.Initialize(cfg =>
             {
-                AutomapperConfiguration.CreateMapping(cfg);
+                
             });                                
         }
     }

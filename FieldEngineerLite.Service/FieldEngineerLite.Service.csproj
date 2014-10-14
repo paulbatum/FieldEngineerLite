@@ -201,14 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\JobController.cs" />
-    <Compile Include="DataObjects\CustomerDTO.cs" />
-    <Compile Include="DataObjects\EquipmentDTO.cs" />
-    <Compile Include="DataObjects\JobDTO.cs" />
     <Compile Include="Helpers\AadHelper.cs" />
     <Compile Include="Helpers\DefaultMappedEntityDomainManager.cs" />
     <Compile Include="Helpers\ExpandPropertyAttribute.cs" />
-    <Compile Include="App_Start\AutomapperConfiguration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\ExistingDbContext.cs" />
@@ -221,7 +216,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="SQLDBSetup.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -232,9 +226,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\mobile-pbevolve.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-pbevolvewest.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

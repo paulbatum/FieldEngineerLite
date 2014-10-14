@@ -13,93 +13,87 @@ namespace FieldEngineerLite
 {
     public class JobService
     {
-        private MobileServiceClient MobileService = new MobileServiceClient(
-            "https://pbevolvewest.azure-mobile.net/",
-            "",
-            new LoggingHandler()
-        );
-
-        private IMobileServiceSyncTable<Job> jobTable;
+        private List<Job> jobs;
 
         public async Task InitializeAsync()
         {
-            var store = new MobileServiceSQLiteStoreWithLogging("localdata.db");
-            store.DefineTable<Job> ();
-            await this.MobileService.SyncContext.InitializeAsync(store);
-
-            jobTable = this.MobileService.GetSyncTable<Job>();
+            jobs = GetDummyData ();
+            await Task.FromResult (0);
         }
 
         public async Task SyncAsync()
         {
-            // Comment this back in if you want auth
-            //if (!await IsAuthenticated())
-            //    return;
-
-            await this.MobileService.SyncContext.PushAsync();
-
-            var query = jobTable.CreateQuery()
-                .Where(job => job.AgentId == "37e865e8-38f1-4e6b-a8ee-b404a188676e")
-                ;
-
-            await jobTable.PullAsync("myjobs", query);
+            await Task.FromResult (0);
         }            
 
         public async Task<IEnumerable<Job>> SearchJobs(string searchInput)
         {
-            var query = jobTable.CreateQuery ();
-                
-            if (!string.IsNullOrWhiteSpace(searchInput)) {
-                query = query.Where (job => 
-                    job.JobNumber == searchInput
-                    || searchInput.ToUpper().Contains(job.Title.ToUpper()) // workaround bug: these are backwards
-                    || searchInput.ToUpper().Contains(job.Status.ToUpper())
-                );
-            }
-
-            return await query.ToEnumerableAsync();
+            IEnumerable<Job> items = this.jobs;           
+            return await Task.FromResult(items);
         }
 
         public async Task CompleteJobAsync(Job job)
         {
             job.Status = Job.CompleteStatus;
-            await jobTable.UpdateAsync(job);
-
-            var inprogress = await jobTable
-                .Where(j => j.Status == Job.InProgressStatus)
-                .Take(1)
-                .ToListAsync();
-
-            if(inprogress.Count == 0)
-            {
-                var nextJob = (await jobTable
-                    .Where(j => j.Status == Job.PendingStatus)
-                    .Take(1)
-                    .ToListAsync()
-                ).FirstOrDefault();
-
-                if (nextJob != null)
-                {
-                    nextJob.Status = Job.InProgressStatus;
-                    await jobTable.UpdateAsync(nextJob);
-                }
-            }
+            await Task.FromResult (0);
         }
 
         public async Task ClearAllJobs()
         {
-            await jobTable.PurgeAsync ("myjobs", jobTable.CreateQuery(), CancellationToken.None);
-            await InitializeAsync ();
+            jobs = new List<Job> ();
         }
 
         private async Task<bool> IsAuthenticated()
         {
-            if(this.MobileService.CurrentUser == null)
-            {
-                await this.MobileService.LoginAsync(App.UIContext, MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory);
-            }
+            return true;               
+        }   
 
-            return this.MobileService.CurrentUser != null;                
+        private List<Job> GetDummyData()
+        {
+            return new List<Job> {
+                new Job 
+                { 
+                    AgentId = "agent1",
+                    Customer = new Customer { FullName = "Fake Customer" },
+                    Equipments = new List<Equipment>
+                    {
+                        new Equipment { Name = "Some cable", ThumbImage = "Data/EquipmentImages/HDMI_1_Thumb.jpg" }
+                    },
+                    EtaTime = "08:30 - 09:30",
+                    Id = "1",
+                    JobNumber = "1",
+                    Status = Job.InProgressStatus,
+                    Title = "Go fix some broken thing"
+                },
+                new Job 
+                { 
+                    AgentId = "agent1", 
+                    Customer = new Customer { FullName = "Another Pretend Customer" },
+                    Equipments = new List<Equipment>
+                    {
+                        new Equipment { Name = "Some cable", ThumbImage = "Data/EquipmentImages/HDMI_1_Thumb.jpg" }
+                    },
+                    EtaTime = "10:30 - 11:30",
+                    Id = "2",
+                    JobNumber = "2",
+                    Status = Job.PendingStatus,
+                    Title = "Work work"
+                },
+                new Job 
+                { 
+                    AgentId = "agent1", 
+                    Customer = new Customer { FullName = "John Smith" },
+                    Equipments = new List<Equipment>
+                    {
+                        new Equipment { Name = "Some cable", ThumbImage = "Data/EquipmentImages/HDMI_1_Thumb.jpg" }
+                    },
+                    EtaTime = "11:30 - 12:30",
+                    Id = "3",
+                    JobNumber = "3",
+                    Status = Job.CompleteStatus,
+                    Title = "setup the new thing"
+                }
+            };
         }
     }
 }
