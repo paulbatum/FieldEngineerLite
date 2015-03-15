@@ -15,7 +15,8 @@ namespace FieldEngineerLite
     {
         private MobileServiceClient MobileService = new MobileServiceClient(
             "https://pbevolvewest.azure-mobile.net/",
-            "",
+            ""
+            ,
             new LoggingHandler()
         );
 

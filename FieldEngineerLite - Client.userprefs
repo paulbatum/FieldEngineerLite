@@ -1,28 +1,11 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Mixed Platforms" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5s.8.0" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FieldEngineerLite.Client/FieldEngineerLite.iOS/AppDelegate.cs">
+﻿<Properties StartupItem="FieldEngineerLite.Client/FieldEngineerLite.Android/FieldEngineerLite.Android.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Mixed Platforms" PreferredExecutionTarget="Android.Nexus 4 (Jelly Bean)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FieldEngineerLite.Client/FieldEngineerLite/Views/JobListPage.cs">
     <Files>
-      <File FileName="FieldEngineerLite.Client/FieldEngineerLite/Services/JobService.cs" Line="20" Column="20" />
-      <File FileName="FieldEngineerLite.Client/FieldEngineerLite.iOS/AppDelegate.cs" Line="22" Column="22" />
+      <File FileName="FieldEngineerLite.Client/FieldEngineerLite/Views/JobGroupingHeaderCell.cs" Line="1" Column="1" />
+      <File FileName="FieldEngineerLite.Client/FieldEngineerLite/Views/JobListPage.cs" Line="1" Column="1" />
+      <File FileName="FieldEngineerLite.Client/FieldEngineerLite/Views/JobDetailsPage.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="FieldEngineerLite" expanded="True">
-            <Node name="Helpers" expanded="True" />
-            <Node name="Models" expanded="True" />
-            <Node name="Services" expanded="True" />
-            <Node name="Views" expanded="True" />
-          </Node>
-          <Node name="FieldEngineerLite.iOS" expanded="True">
-            <Node name="AppDelegate.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
