@@ -15,7 +15,7 @@ namespace FieldEngineerLite
     {
         private MobileServiceClient MobileService = new MobileServiceClient(
             "https://fabianfsl.azure-mobile.net/",
-            "ARagsUUPgjySjKSwNwbtmpyQQeSCsW73"
+            ""
             ,
             new LoggingHandler()
         );
