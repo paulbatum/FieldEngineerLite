@@ -14,8 +14,9 @@ namespace FieldEngineerLite
     public class JobService
     {
         private MobileServiceClient MobileService = new MobileServiceClient(
-            "https://pbevolvewest.azure-mobile.net/",
-            "",
+            "https://fabianfsl.azure-mobile.net/",
+            "ARagsUUPgjySjKSwNwbtmpyQQeSCsW73"
+            ,
             new LoggingHandler()
         );
 
