@@ -35,7 +35,6 @@ Global
 		{BDFAB9D7-F1A2-401D-8260-9F593AD288C6}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = FieldEngineerLite.Client\FieldEngineerLite.iOS\FieldEngineerLite.iOS.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
 		$1.FileWidth = 120

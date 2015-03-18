@@ -11,3 +11,8 @@ By default, when you run the client sample it will be configured to use an exist
 
 ## Server Setup ##
 You can run the .NET server project locally or by publishing it to a mobile service. See the `SQLDBSetup.sql` script for more information on setting up the database. 
+
+##Supporting Videos##
+<p>A sesssion was done on this topic at TechEd Europe 2014, Session Number: DEV-B350</p>
+<p>Presenters: Omar Khan / Kirill Gavrylyuk</p>
+<p>Session Location: https://www.youtube.com/watch?v=M3bpREwZYXI </p>
