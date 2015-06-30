@@ -52,8 +52,8 @@ namespace FieldEngineerLite
             if (!string.IsNullOrWhiteSpace(searchInput)) {
                 query = query.Where (job => 
                     job.JobNumber == searchInput
-                    || searchInput.ToUpper().Contains(job.Title.ToUpper()) // workaround bug: these are backwards
-                    || searchInput.ToUpper().Contains(job.Status.ToUpper())
+                    || job.Title.ToUpper().Contains(searchInput.ToUpper())
+                    || job.Status.ToUpper().Contains(searchInput.ToUpper())
                 );
             }
 
