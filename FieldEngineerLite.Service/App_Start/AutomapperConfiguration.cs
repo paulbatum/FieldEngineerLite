@@ -19,8 +19,8 @@ namespace FieldEngineerLite.Service
 
             // For incoming requests, ignore the relationships
             cfg.CreateMap<JobDTO, Job>()                                            
-                .ForMember(jobDTO => jobDTO.Customer, map => map.Ignore())
-                .ForMember(jobDTO => jobDTO.Equipments, map => map.Ignore());
+                .ForMember(job => job.Customer, map => map.Ignore())
+                .ForMember(job => job.Equipments, map => map.Ignore());
 
             cfg.CreateMap<Customer, CustomerDTO>();            
             cfg.CreateMap<Equipment, EquipmentDTO>();
